@@ -1,0 +1,26 @@
+{% extends 'fnindex.html' %}
+{% block content %}
+	<section>
+	<div style="position:static; margin-left:400px; margin-right:400px; margin-bottom:200px; margin-top:200px;">
+       	<div class="row justify-content-center mb-3 pb-3">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+<!--          	<span class="subheading">Featured Products</span>-->
+            <h2 class="mb-4">Feedback </h2>
+              <br>
+        <div class="input-group mb-3">
+<!--          <span class="input-group-text" id="basic-addon1">@</span>-->
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group">
+<!--          <span class="input-group-text">With textarea</span>-->
+          <textarea class="form-control" placeholder="Feedback" aria-label="With textarea"></textarea>
+        </div>
+    <br>
+    <br>
+    <div class="input-group">
+     <button type="submit" class="btn btn-primary mr-2">Submit</button>
+          <button class="btn btn-dark">Cancel</button>
+    </div>
+</div>
+       </section>
+{% endblock %}

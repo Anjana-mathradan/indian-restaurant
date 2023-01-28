@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    #login {
+        text-decoration: none;
+
+        color: rgb(7, 129, 236);
+
+    }
+    #login:hover{
+        color: rgb(0, 255, 247);
+
+   }
+   #nudelogo{
+        text-decoration: none;
+        color: #333;
+   }
+   #nudelogo:hover{
+        color: rgb(112, 193, 244);
+   }
+</style>
+<body style="margin: 0px; margin-bottom: 0px;">
+    <div style="background-color: aqua; width: 100%;">
+
+        <div class="card mb-4" style="max-width: 100%; height: 100%;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{% static 'images\regpage1.jpg' %}" class="img-fluid rounded-start'" alt="...">
+              </div>
+              <div class="col-md-8" style="background-color: rgba(182, 200, 208, 0.331);">
+                <div class="card-body" style="margin-left: 50px; margin-top: 10px;">
+                    <a href="{% url 'fnindex' %}" id="nudelogo">
+                        <div style="position: static; color: rgb(219, 99, 25);
+                        padding: 10px 15px; width: 680px; border-radius: 10px; margin-left: -15px;">
+                            <h4>{{msg}}</h4>
+                        </div>
+                        <h1 class="card-title">INDIAN RESTAURANT</h1><br><br>
+                    </a>
+                  <h3 style="color: rgb(99, 157, 193);">Login</h3><br>
+                  <form action="{% url 'frontloginsave' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput" class="form-label">User Name</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" required placeholder="Username here" name="username">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput2" class="form-label">Password </label>
+                            <input type="password" class="form-control" id="formGroupExampleInput2" required placeholder="Password here" name="password">
+                        </div><br><br><br><br>
+                            <div><button type="submit" class="btn btn-secondary" style="float: left; width: 150px; font-weight: bold;">Login</button>
+
+                            </div>
+                  </form>
+                        <h4 style="float: left; margin-left: 80px; margin-top: 5px;">Are you a new User ?
+                        <span >
+                        <a href="{% url 'frontreg' %}" id="login">Sign Up</a> </span> to continue </h4>
+                    </div>
+
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div></div>
+    </div>
+</body>
+</html>

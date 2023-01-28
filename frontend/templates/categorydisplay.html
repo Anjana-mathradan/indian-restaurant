@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% extends "fnindex.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <section class="ftco-section">
+    	<div class="container">
+				<div class="row justify-content-center mb-3 pb-3">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+<!--          	<span class="subheading">Featured Products</span>-->
+            <h2 class="mb-4">Our Items </h2>
+<!--            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>-->
+          </div>
+        </div>   		
+    	</div>
+
+    	<div class="container">
+    		<div class="row">
+				{% for d in products %}
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="product">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="{{d.Image.url}}" alt="Colorlib Template" >
+    						<!-- <span class="status">30%</span>
+    						<div class="overlay"></div> -->
+    					</a>
+    					<div class="text py-3 pb-4 px-3 text-center">
+    						<h3><a href="#">{{d.Product}}</a></h3>
+							<h3><a href="#">{{d.Price}}</a></h3>
+    						<div class="d-flex">
+								<div class="text py-3 pb-4 px-3 text-center">
+
+<!--								<h3><a href="#">{{d.Description}}</a></h3>-->
+								<form action="{% url 'singleproduct' dataid=d.id %}">
+								<button type="submit" class="btn btn-primary">  {{d.Product}}</button>
+								</form>
+		    					</div>
+	    					</div>
+	    					
+    					</div>
+    				</div>
+
+    			</div>
+				{% endfor %}
+    			
+    		</div>
+    	</div>
+		
+    </section>
+
+</body>
+</html>
+{% endblock %}
